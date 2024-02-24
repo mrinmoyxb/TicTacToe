@@ -20,6 +20,8 @@ import androidx.compose.material3.CardColors
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -34,24 +36,208 @@ import com.example.tictactoe.ViewModel.GameViewModel
 
 @SuppressLint("SuspiciousIndentation")
 @Composable
-fun CustomButton(buttonValue: String, /*changeColor: Boolean,*/ viewModel: GameViewModel, id: Int){
-    //val boxColor = (if(changeColor) Color(0xFF99e2b4) else Color(0xFFFFFFFF))
-    val context = LocalContext.current
+fun CustomButton(viewModel: GameViewModel){
+    val button by viewModel._buttomValues.collectAsState()
 
-        Card(modifier = Modifier
-            .height(100.dp)
-            .width(100.dp)
-            .clickable{viewModel.ButtonClick(id)},
+    // Row 1:
+    Row(modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
+        // 0
+        Card(
+            modifier = Modifier
+                .height(110.dp)
+                .width(110.dp)
+                .clickable { viewModel.setButtons(0) },
             colors = CardDefaults.cardColors(Color.White),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
+        ) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
             ) {
-            Box(modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center) {
                 Text(
-                    buttonValue, fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    button[0], fontSize = 48.sp, fontWeight = FontWeight.Bold,
                     color = Color.Blue, textAlign = TextAlign.Center
                 )
             }
         }
+        // 1
+        Card(
+            modifier = Modifier
+                .height(110.dp)
+                .width(110.dp)
+                .clickable { viewModel.setButtons(1) },
+            colors = CardDefaults.cardColors(Color.White),
+            elevation = CardDefaults.cardElevation(10.dp),
+            shape = RoundedCornerShape(20.dp)
+        ) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    button[1], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    color = Color.Blue, textAlign = TextAlign.Center
+                )
+            }
+        }
+        // 2
+        Card(
+            modifier = Modifier
+                .height(110.dp)
+                .width(110.dp)
+                .clickable { viewModel.setButtons(2) },
+            colors = CardDefaults.cardColors(Color.White),
+            elevation = CardDefaults.cardElevation(10.dp),
+            shape = RoundedCornerShape(20.dp)
+        ) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    button[2], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    color = Color.Blue, textAlign = TextAlign.Center
+                )
+            }
+        }
+
+    }
+
+    // Row 2:
+    Spacer(modifier = Modifier.height(12.dp))
+    Row(modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
+        // 3
+        Card(
+            modifier = Modifier
+                .height(110.dp)
+                .width(110.dp)
+                .clickable { viewModel.setButtons(3) },
+            colors = CardDefaults.cardColors(Color.White),
+            elevation = CardDefaults.cardElevation(10.dp),
+            shape = RoundedCornerShape(20.dp)
+        ) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    button[3], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    color = Color.Blue, textAlign = TextAlign.Center
+                )
+            }
+        }
+        // 4
+        Card(
+            modifier = Modifier
+                .height(110.dp)
+                .width(110.dp)
+                .clickable { viewModel.setButtons(4) },
+            colors = CardDefaults.cardColors(Color.White),
+            elevation = CardDefaults.cardElevation(10.dp),
+            shape = RoundedCornerShape(20.dp)
+        ) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    button[4], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    color = Color.Blue, textAlign = TextAlign.Center
+                )
+            }
+        }
+        // 5
+        Card(
+            modifier = Modifier
+                .height(110.dp)
+                .width(110.dp)
+                .clickable { viewModel.setButtons(5) },
+            colors = CardDefaults.cardColors(Color.White),
+            elevation = CardDefaults.cardElevation(10.dp),
+            shape = RoundedCornerShape(20.dp)
+        ) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    button[5], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    color = Color.Blue, textAlign = TextAlign.Center
+                )
+            }
+        }
+    }
+
+    // Row 3:
+    Spacer(modifier = Modifier.height(12.dp))
+    Row(modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
+        // 6
+        Card(
+            modifier = Modifier
+                .height(110.dp)
+                .width(110.dp)
+                .clickable { viewModel.setButtons(6) },
+            colors = CardDefaults.cardColors(Color.White),
+            elevation = CardDefaults.cardElevation(10.dp),
+            shape = RoundedCornerShape(20.dp)
+        ) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    button[6], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    color = Color.Blue, textAlign = TextAlign.Center
+                )
+            }
+        }
+        // 7
+        Card(
+            modifier = Modifier
+                .height(110.dp)
+                .width(110.dp)
+                .clickable { viewModel.setButtons(7) },
+            colors = CardDefaults.cardColors(Color.White),
+            elevation = CardDefaults.cardElevation(10.dp),
+            shape = RoundedCornerShape(20.dp)
+        ) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    button[7], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    color = Color.Blue, textAlign = TextAlign.Center
+                )
+            }
+        }
+        // 8
+        Card(
+            modifier = Modifier
+                .height(110.dp)
+                .width(110.dp)
+                .clickable { viewModel.setButtons(8) },
+            colors = CardDefaults.cardColors(Color.White),
+            elevation = CardDefaults.cardElevation(10.dp),
+            shape = RoundedCornerShape(20.dp)
+        ) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    button[8], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    color = Color.Blue, textAlign = TextAlign.Center
+                )
+            }
+        }
+
+    }
 }

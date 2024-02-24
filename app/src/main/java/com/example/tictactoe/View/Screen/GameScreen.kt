@@ -17,19 +17,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.tictactoe.View.Components.CustomButton
 import com.example.tictactoe.ViewModel.GameViewModel
 
 @Preview(showBackground = true)
 @Composable
-fun GameScreen(){
+fun GameScreen() {
     val viewModel: GameViewModel = GameViewModel()
-    val button by viewModel.buttonValues.collectAsState()
-
-//    val turn = if(state.isXTurn) "X's Turn" else "O's Turn"
-//    val turnMessage = "Tic Tac Toe\nIt is $turn"
-//    val winner = state.victor
-//    val winnerMessage = "Tic Tac Toe\n$winner Wins"
-
+   
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -37,41 +32,8 @@ fun GameScreen(){
             .padding(10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
-    ){
-
-        //Text(text = if(winner!=null) winnerMessage else turnMessage, fontSize = 32.sp, color = Color.White)
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly
-        ){
-//            CustomButton(button[0]) { viewModel.ButtonClick(0) }
-//            CustomButton(button[1]) { viewModel.ButtonClick(1) }
-//            CustomButton(button[2]) { viewModel.ButtonClick(2) }
-        }
-        Spacer(modifier = Modifier.height(12.dp))
-
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly
-        ){
-//            CustomButton(button[3]) { viewModel.ButtonClick(3) }
-//            CustomButton(button[4]) { viewModel.ButtonClick(4) }
-//            CustomButton(button[5]) { viewModel.ButtonClick(5) }
-        }
-        Spacer(modifier = Modifier.height(12.dp))
-
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly
-        ){
-//            CustomButton(button[6]) { viewModel.ButtonClick(6) }
-//            CustomButton(button[7]) { viewModel.ButtonClick(7) }
-//            CustomButton(button[8]) { viewModel.ButtonClick(8) }
-
-        }
-
-//        Spacer(modifier = Modifier.height(50.dp))
-//        ResetButton { viewModel.resetButton() }
+    ) {
+        CustomButton(viewModel = viewModel)
     }
 }
 

@@ -32,6 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.tictactoe.ViewModel.GameViewModel
+import com.example.tictactoe.ui.theme.inter
 
 
 @SuppressLint("SuspiciousIndentation")
@@ -58,7 +59,7 @@ fun CustomButton(viewModel: GameViewModel){
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    button[0], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    button[0], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
                     color = Color.Blue, textAlign = TextAlign.Center
                 )
             }
@@ -78,7 +79,7 @@ fun CustomButton(viewModel: GameViewModel){
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    button[1], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    button[1], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
                     color = Color.Blue, textAlign = TextAlign.Center
                 )
             }
@@ -98,7 +99,7 @@ fun CustomButton(viewModel: GameViewModel){
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    button[2], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    button[2], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
                     color = Color.Blue, textAlign = TextAlign.Center
                 )
             }
@@ -126,7 +127,7 @@ fun CustomButton(viewModel: GameViewModel){
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    button[3], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    button[3], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
                     color = Color.Blue, textAlign = TextAlign.Center
                 )
             }
@@ -146,7 +147,7 @@ fun CustomButton(viewModel: GameViewModel){
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    button[4], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    button[4], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
                     color = Color.Blue, textAlign = TextAlign.Center
                 )
             }
@@ -166,7 +167,7 @@ fun CustomButton(viewModel: GameViewModel){
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    button[5], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    button[5], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
                     color = Color.Blue, textAlign = TextAlign.Center
                 )
             }
@@ -193,7 +194,7 @@ fun CustomButton(viewModel: GameViewModel){
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    button[6], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    button[6], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
                     color = Color.Blue, textAlign = TextAlign.Center
                 )
             }
@@ -213,7 +214,7 @@ fun CustomButton(viewModel: GameViewModel){
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    button[7], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    button[7], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
                     color = Color.Blue, textAlign = TextAlign.Center
                 )
             }
@@ -233,7 +234,7 @@ fun CustomButton(viewModel: GameViewModel){
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    button[8], fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    button[8], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
                     color = Color.Blue, textAlign = TextAlign.Center
                 )
             }

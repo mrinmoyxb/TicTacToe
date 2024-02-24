@@ -39,7 +39,7 @@ import com.example.tictactoe.ui.theme.inter
 @Composable
 fun CustomButton(viewModel: GameViewModel){
     val button by viewModel._buttomValues.collectAsState()
-
+    
     // Row 1:
     Row(modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceEvenly

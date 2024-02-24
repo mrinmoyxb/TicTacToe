@@ -9,14 +9,21 @@ import kotlinx.coroutines.flow.asStateFlow
 
 class GameViewModel: ViewModel() {
     private val buttonValues = MutableStateFlow<Array<String>>(arrayOf("", "", "", "", "", "", "", "", ""))
-    val _buttomValues: StateFlow<Array<String>> = buttonValues
+    var _buttomValues: StateFlow<Array<String>> = buttonValues
 
     private val buttonWinners = MutableStateFlow<Array<Boolean>>(arrayOf(false, false, false, false, false, false, false, false, false))
-    val _buttonWinners: StateFlow<Array<Boolean>> = buttonWinners
+    var _buttonWinners: StateFlow<Array<Boolean>> = buttonWinners
 
     private val isXTurn = MutableStateFlow<Boolean>(true)
-    val _isXTurn: StateFlow<Boolean> = isXTurn
+    var _isXTurn: StateFlow<Boolean> = isXTurn
 
+    private val victory = MutableStateFlow<String>("")
+    var _victory: StateFlow<String> = victory
+
+    fun resetButton(){
+        buttonValues.value = arrayOf("", "", "", "", "", "", "", "", "")
+        isXTurn.value = true
+    }
     fun setButtons(id: Int) {
         if(buttonValues.value[id]==""){
             val newValues = buttonValues.value.toMutableList()

@@ -16,29 +16,38 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tictactoe.View.Components.CustomButton
 import com.example.tictactoe.View.Components.Heading
+import com.example.tictactoe.View.Components.ResetButton
 import com.example.tictactoe.ViewModel.GameViewModel
 
 @Preview(showBackground = true)
 @Composable
 fun GameScreen() {
     val viewModel: GameViewModel = GameViewModel()
+    val player by viewModel._isXTurn.collectAsState()
+
    Column(
-       modifier = Modifier.fillMaxHeight().fillMaxWidth().background(Color.Black),
+       modifier = Modifier
+           .fillMaxHeight()
+           .fillMaxWidth()
+           .background(Color.Black),
        horizontalAlignment = Alignment.CenterHorizontally
    ) {
        Spacer(modifier = Modifier.height(50.dp))
-       Heading("Tic Tac Toe")
+       Heading("Tic Tac Toe", FontWeight.Bold, 32)
+       //Heading(if(player)"Player1's turn" else "Player2's turn", FontWeight.Bold, 32)
        Spacer(modifier = Modifier.height(110.dp))
        Column(
-           //modifier = Modifier.fillMaxSize(),
            horizontalAlignment = Alignment.CenterHorizontally,
            verticalArrangement = Arrangement.Center
        ){
            CustomButton(viewModel = viewModel)
+           Spacer(modifier = Modifier.height(50.dp))
+           ResetButton(viewModel = viewModel)
        }
    }
 }

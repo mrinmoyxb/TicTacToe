@@ -22,14 +22,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.tictactoe.ViewModel.GameViewModel
 
 @Composable
-fun ResetButton(onClick: ()-> Unit){
+fun ResetButton(viewModel: GameViewModel){
     val context = LocalContext.current
     Card(modifier = Modifier
         .height(50.dp)
         .width(180.dp)
-        .clickable{onClick
+        .clickable{
+            viewModel.resetButton()
             Toast.makeText(context, "Reset Game", LENGTH_SHORT).show()},
         shape = RoundedCornerShape(80.dp),
         colors = CardDefaults.cardColors(Color.White)

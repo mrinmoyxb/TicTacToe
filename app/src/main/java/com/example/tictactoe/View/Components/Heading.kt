@@ -8,6 +8,6 @@ import androidx.compose.ui.unit.sp
 import com.example.tictactoe.ui.theme.inter
 
 @Composable
-fun Heading(text: String){
-    Text(text, fontSize = 50.sp, fontWeight = FontWeight.Bold, fontFamily = inter, color = Color.White)
+fun Heading(text: String, fontWeight: FontWeight, size: Int){
+    Text(text, fontSize = size.sp, fontWeight = fontWeight, fontFamily = inter, color = Color.White)
 }

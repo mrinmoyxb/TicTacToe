@@ -1,6 +1,9 @@
 package com.example.tictactoe.View.Components
 
+import android.annotation.SuppressLint
+import android.widget.Toast
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,18 +23,25 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.tictactoe.ViewModel.GameViewModel
 
 
+@SuppressLint("SuspiciousIndentation")
 @Composable
-fun CustomButton(buttonValue: String){
+fun CustomButton(buttonValue: String, /*changeColor: Boolean,*/ viewModel: GameViewModel, id: Int){
+    //val boxColor = (if(changeColor) Color(0xFF99e2b4) else Color(0xFFFFFFFF))
+    val context = LocalContext.current
+
         Card(modifier = Modifier
             .height(100.dp)
-            .width(100.dp),
+            .width(100.dp)
+            .clickable{viewModel.ButtonClick(id)},
             colors = CardDefaults.cardColors(Color.White),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
@@ -39,51 +49,9 @@ fun CustomButton(buttonValue: String){
             Box(modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.Center) {
                 Text(
-                    buttonValue, fontSize = 50.sp, fontWeight = FontWeight.Bold,
-                    color = Color.Black, textAlign = TextAlign.Center
+                    buttonValue, fontSize = 48.sp, fontWeight = FontWeight.Bold,
+                    color = Color.Blue, textAlign = TextAlign.Center
                 )
             }
         }
-
-}
-
-@Preview(showBackground = true)
-@Composable
-fun Display(){
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Black)
-            .padding(10.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ){
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly,
-        ){
-            CustomButton("X")
-            CustomButton("O")
-            CustomButton("X")
-        }
-        Spacer(modifier = Modifier.height(12.dp))
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly
-        ){
-            CustomButton("X")
-            CustomButton("X")
-            CustomButton("O")
-        }
-        Spacer(modifier = Modifier.height(12.dp))
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly
-        ){
-            CustomButton("O")
-            CustomButton("O")
-            CustomButton("O")
-        }
-
-    }
 }

@@ -3,37 +3,28 @@ package com.example.tictactoe.ViewModel
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 
 class GameViewModel: ViewModel() {
+    private val _buttonValues = MutableStateFlow(arrayOf("", "", "", "", "", "", "", "", ""))
+    val buttonValues = _buttonValues.asStateFlow()
 
-    // both _state and state should be of same datatype
-    private val _state = mutableStateOf(GameState())
-    val state: State<GameState> = _state
+    private val _buttonWinners = MutableStateFlow<Array<Boolean>>(arrayOf(false, false, false, false, false, false, false, false, false))
+    val buttonWinners = _buttonWinners.asStateFlow()
 
-    // moving back to original state
-    fun resetButton() {
-        _state.value = GameState()
-    }
+    private val _victory = MutableStateFlow<String?>(null)
+    val victory = _victory.asStateFlow()
 
-    // setting "X" or "O" based on users action
-    fun setTurn(id: Int) {
-        if (_state.value.victory == null) {
-            if (_state.value.buttonValues[id].equals("")) {
-                val buttons = _state.value.buttonValues.copyOf()
-                if (_state.value.isTurn) {
-                    buttons[id] = "X"
-                } else {
-                    buttons[id] = "O"
-                }
-                _state.value = _state.value.copy(
-                    buttonValues = buttons,
-                    isTurn = !state.value.isTurn
-                )
-            }
+    private val _playerTurn = MutableStateFlow<Boolean>(true) // True: X, False: O
+    val playerTurn = _playerTurn.asStateFlow()
+
+    fun ButtonClick(id: Int){
+        if(buttonValues.value[id].isEmpty() && victory.value == null) {
+            val updatedValues = buttonValues.value.toMutableList()
+            val currentPlayer = if (playerTurn.value) "X" else "O"
+            updatedValues[id] = currentPlayer
+            _buttonValues.value = updatedValues.toTypedArray()
         }
     }
-
-//    private fun isGameOver(): Boolean{
-//        return
-//    }
 }

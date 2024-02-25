@@ -40,7 +40,8 @@ import com.example.tictactoe.ui.theme.inter
 fun CustomButton(viewModel: GameViewModel){
     val button by viewModel._buttomValues.collectAsState()
     val winners by viewModel._buttonWinners.collectAsState()
-    val color1: Color = Color(0xFFa594f9)
+    //val color1: Color = Color(0xFFa594f9)
+    val color1: Color = Color(0xFF80ffdb)
     val color2: Color = Color(0xFFFFFFFF)
     val color3: Color = Color(0xFF000000)
     // Row 1:

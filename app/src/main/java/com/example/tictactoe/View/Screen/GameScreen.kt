@@ -1,5 +1,6 @@
 package com.example.tictactoe.View.Screen
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,16 +21,19 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tictactoe.View.Components.CustomButton
+import com.example.tictactoe.View.Components.GameWinner
 import com.example.tictactoe.View.Components.Heading
+import com.example.tictactoe.View.Components.PlayerTurn
 import com.example.tictactoe.View.Components.ResetButton
 import com.example.tictactoe.ViewModel.GameViewModel
 
+@SuppressLint("StateFlowValueCalledInComposition")
 @Preview(showBackground = true)
 @Composable
 fun GameScreen() {
+    
     val viewModel: GameViewModel = GameViewModel()
-    val player by viewModel._isXTurn.collectAsState()
-    val currentPlayer = player
+    
    Column(
        modifier = Modifier
            .fillMaxHeight()
@@ -39,7 +43,9 @@ fun GameScreen() {
    ) {
        Spacer(modifier = Modifier.height(50.dp))
        Heading("Tic Tac Toe", FontWeight.Bold, 32)
-       Heading(if(currentPlayer)"Player1's turn" else "Player2's turn", FontWeight.Bold, 32)
+       PlayerTurn(viewModel = viewModel)
+       Spacer(modifier = Modifier.height(20.dp))
+       GameWinner(viewModel = viewModel)
        Spacer(modifier = Modifier.height(110.dp))
        Column(
            horizontalAlignment = Alignment.CenterHorizontally,

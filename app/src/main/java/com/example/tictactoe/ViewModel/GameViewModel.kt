@@ -15,7 +15,7 @@ class GameViewModel: ViewModel() {
     private val buttonWinners = MutableStateFlow<Array<Boolean>>(arrayOf(false, false, false, false, false, false, false, false, false))
     var _buttonWinners: StateFlow<Array<Boolean>> = buttonWinners
 
-    private val isXTurn = MutableStateFlow<Boolean>(true)
+    val isXTurn = MutableStateFlow<Boolean>(true)
     var _isXTurn: StateFlow<Boolean> = isXTurn
 
     private val victory = MutableStateFlow<String>("")
@@ -82,6 +82,7 @@ class GameViewModel: ViewModel() {
         }
         else if(allThreeMatch){
             val newValues = buttonWinners.value.toMutableList()
+            victory.value = buttonValues.value[first]
             newValues[first] = true
             newValues[second] = true
             newValues[third] = true

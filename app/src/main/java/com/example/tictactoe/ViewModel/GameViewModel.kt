@@ -38,7 +38,7 @@ class GameViewModel: ViewModel() {
         isGameOver()
     }
 
-    fun isGameOver(): Boolean{
+    private fun isGameOver(): Boolean{
         if(rowHasWinner(1) || rowHasWinner(2) || rowHasWinner(3)){
             return true
         }

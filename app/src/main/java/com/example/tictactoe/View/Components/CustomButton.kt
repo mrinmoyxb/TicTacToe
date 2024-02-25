@@ -40,8 +40,9 @@ import com.example.tictactoe.ui.theme.inter
 fun CustomButton(viewModel: GameViewModel){
     val button by viewModel._buttomValues.collectAsState()
     val winners by viewModel._buttonWinners.collectAsState()
-
-    
+    val color1: Color = Color(0xFFa594f9)
+    val color2: Color = Color(0xFFFFFFFF)
+    val color3: Color = Color(0xFF000000)
     // Row 1:
     Row(modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceEvenly
@@ -52,7 +53,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(0) },
-            colors = CardDefaults.cardColors(if(winners[0]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
+            colors = CardDefaults.cardColors(if(winners[0]) color1 else color2),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -62,7 +63,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[0], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = Color.Blue, textAlign = TextAlign.Center
+                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -72,7 +73,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(1) },
-            colors = CardDefaults.cardColors(if(winners[1]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
+            colors = CardDefaults.cardColors(if(winners[1]) color1 else color2),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -82,7 +83,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[1], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = Color.Blue, textAlign = TextAlign.Center
+                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -92,7 +93,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(2) },
-            colors = CardDefaults.cardColors(if(winners[2]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
+            colors = CardDefaults.cardColors(if(winners[2]) color1 else color2),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -102,7 +103,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[2], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = Color.Blue, textAlign = TextAlign.Center
+                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -120,7 +121,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(3) },
-            colors = CardDefaults.cardColors(if(winners[3]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
+            colors = CardDefaults.cardColors(if(winners[3]) color1 else color2),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -130,7 +131,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[3], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = Color.Blue, textAlign = TextAlign.Center
+                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -140,7 +141,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(4) },
-            colors = CardDefaults.cardColors(if(winners[4]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
+            colors = CardDefaults.cardColors(if(winners[4]) color1 else color2),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -150,7 +151,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[4], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = Color.Blue, textAlign = TextAlign.Center
+                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -160,7 +161,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(5) },
-            colors = CardDefaults.cardColors(if(winners[5]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
+            colors = CardDefaults.cardColors(if(winners[5]) color1 else color2),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -170,7 +171,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[5], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = Color.Blue, textAlign = TextAlign.Center
+                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -187,7 +188,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(6) },
-            colors = CardDefaults.cardColors(if(winners[6]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
+            colors = CardDefaults.cardColors(if(winners[6]) color1 else color2),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -197,7 +198,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[6], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = Color.Blue, textAlign = TextAlign.Center
+                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -207,7 +208,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(7) },
-            colors = CardDefaults.cardColors(if(winners[7]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
+            colors = CardDefaults.cardColors(if(winners[7]) color1 else color2),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -217,7 +218,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[7], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = Color.Blue, textAlign = TextAlign.Center
+                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -227,7 +228,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(8) },
-            colors = CardDefaults.cardColors(if(winners[8]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
+            colors = CardDefaults.cardColors(if(winners[8]) color1 else color2),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -237,7 +238,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[8], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = Color.Blue, textAlign = TextAlign.Center
+                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }

@@ -29,7 +29,7 @@ import com.example.tictactoe.ViewModel.GameViewModel
 fun GameScreen() {
     val viewModel: GameViewModel = GameViewModel()
     val player by viewModel._isXTurn.collectAsState()
-
+    val currentPlayer = player
    Column(
        modifier = Modifier
            .fillMaxHeight()
@@ -39,7 +39,7 @@ fun GameScreen() {
    ) {
        Spacer(modifier = Modifier.height(50.dp))
        Heading("Tic Tac Toe", FontWeight.Bold, 32)
-       //Heading(if(player)"Player1's turn" else "Player2's turn", FontWeight.Bold, 32)
+       Heading(if(currentPlayer)"Player1's turn" else "Player2's turn", FontWeight.Bold, 32)
        Spacer(modifier = Modifier.height(110.dp))
        Column(
            horizontalAlignment = Alignment.CenterHorizontally,

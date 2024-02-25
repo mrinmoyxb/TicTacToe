@@ -21,7 +21,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.tictactoe.View.Components.CustomButton
-import com.example.tictactoe.View.Components.GameWinner
 import com.example.tictactoe.View.Components.Heading
 import com.example.tictactoe.View.Components.PlayerTurn
 import com.example.tictactoe.View.Components.ResetButton
@@ -42,11 +41,14 @@ fun GameScreen() {
        horizontalAlignment = Alignment.CenterHorizontally
    ) {
        Spacer(modifier = Modifier.height(50.dp))
-       Heading("Tic Tac Toe", FontWeight.Bold, 32)
-       PlayerTurn(viewModel = viewModel)
+       Heading("Tic Tac Toe", FontWeight.Bold, 38)
+
        Spacer(modifier = Modifier.height(20.dp))
-       GameWinner(viewModel = viewModel)
-       Spacer(modifier = Modifier.height(110.dp))
+       PlayerTurn(viewModel = viewModel)
+
+       Spacer(modifier = Modifier.height(20.dp))
+
+       Spacer(modifier = Modifier.height(70.dp))
        Column(
            horizontalAlignment = Alignment.CenterHorizontally,
            verticalArrangement = Arrangement.Center

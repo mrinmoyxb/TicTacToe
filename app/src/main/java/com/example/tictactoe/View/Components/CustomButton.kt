@@ -41,7 +41,7 @@ fun CustomButton(viewModel: GameViewModel){
     val button by viewModel._buttomValues.collectAsState()
     val winners by viewModel._buttonWinners.collectAsState()
     //val color1: Color = Color(0xFFa594f9)
-    val color1: Color = Color(0xFF80ffdb)
+    val color1: Color = Color(0xFF7752FE)
     val color2: Color = Color(0xFFFFFFFF)
     val color3: Color = Color(0xFF000000)
     // Row 1:
@@ -84,7 +84,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[1], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
+                    color = if(winners[1]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -104,7 +104,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[2], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
+                    color = if(winners[2]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -132,7 +132,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[3], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
+                    color = if(winners[3]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -152,7 +152,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[4], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
+                    color = if(winners[4]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -172,7 +172,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[5], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
+                    color = if(winners[5]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -199,7 +199,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[6], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
+                    color = if(winners[6]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -219,7 +219,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[7], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
+                    color = if(winners[7]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }
@@ -239,7 +239,7 @@ fun CustomButton(viewModel: GameViewModel){
             ) {
                 Text(
                     button[8], fontSize = 48.sp, fontFamily = inter, fontWeight = FontWeight.Bold,
-                    color = if(winners[0]) color2 else color3, textAlign = TextAlign.Center
+                    color = if(winners[8]) color2 else color3, textAlign = TextAlign.Center
                 )
             }
         }

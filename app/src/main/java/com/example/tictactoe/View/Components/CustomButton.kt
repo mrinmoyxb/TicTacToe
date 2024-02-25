@@ -39,6 +39,8 @@ import com.example.tictactoe.ui.theme.inter
 @Composable
 fun CustomButton(viewModel: GameViewModel){
     val button by viewModel._buttomValues.collectAsState()
+    val winners by viewModel._buttonWinners.collectAsState()
+
     
     // Row 1:
     Row(modifier = Modifier.fillMaxWidth(),
@@ -50,7 +52,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(0) },
-            colors = CardDefaults.cardColors(Color.White),
+            colors = CardDefaults.cardColors(if(winners[0]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -70,7 +72,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(1) },
-            colors = CardDefaults.cardColors(Color.White),
+            colors = CardDefaults.cardColors(if(winners[1]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -90,7 +92,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(2) },
-            colors = CardDefaults.cardColors(Color.White),
+            colors = CardDefaults.cardColors(if(winners[2]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -118,7 +120,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(3) },
-            colors = CardDefaults.cardColors(Color.White),
+            colors = CardDefaults.cardColors(if(winners[3]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -138,7 +140,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(4) },
-            colors = CardDefaults.cardColors(Color.White),
+            colors = CardDefaults.cardColors(if(winners[4]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -158,7 +160,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(5) },
-            colors = CardDefaults.cardColors(Color.White),
+            colors = CardDefaults.cardColors(if(winners[5]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -185,7 +187,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(6) },
-            colors = CardDefaults.cardColors(Color.White),
+            colors = CardDefaults.cardColors(if(winners[6]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -205,7 +207,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(7) },
-            colors = CardDefaults.cardColors(Color.White),
+            colors = CardDefaults.cardColors(if(winners[7]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
@@ -225,7 +227,7 @@ fun CustomButton(viewModel: GameViewModel){
                 .height(110.dp)
                 .width(110.dp)
                 .clickable { viewModel.setButtons(8) },
-            colors = CardDefaults.cardColors(Color.White),
+            colors = CardDefaults.cardColors(if(winners[8]) Color(0xFFade8f4) else Color(0xFFFFFFFF)),
             elevation = CardDefaults.cardElevation(10.dp),
             shape = RoundedCornerShape(20.dp)
         ) {
